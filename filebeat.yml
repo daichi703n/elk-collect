@@ -1,0 +1,23 @@
+filebeat.prospectors:
+- input_type: log
+#  paths: ["/etc/httpd/logs/access_log"]
+  paths: ["/home/dev/access_log"]
+  symlinks: true
+  fields:
+    subsystem: arc
+    subtype: beats
+- input_type: log
+  paths: ["/opt/simplelog_appender/log/beats_test.log"]
+  fields:
+    subsystem: arc
+    subtype: beats_test
+- input_type: log
+  paths: ["/opt/simplelog_appender/log/beats_exec.log"]
+  fields:
+    subsystem: arc
+    subtype: beats_exec
+output.logstash:
+  hosts: ["arc-logcollect01.is.nttdocomo.co.jp:5044"]
+#logging.level: debug
+#logging.level: info
+logging.metrics.enabled: false
