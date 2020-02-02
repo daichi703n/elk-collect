@@ -17,7 +17,7 @@ filebeat.prospectors:
     subsystem: arc
     subtype: beats_exec
 output.logstash:
-  hosts: ["arc-logcollect01.is.nttdocomo.co.jp:5044"]
+  hosts: ["fluentd.local:5044"]
 #logging.level: debug
 #logging.level: info
 logging.metrics.enabled: false
